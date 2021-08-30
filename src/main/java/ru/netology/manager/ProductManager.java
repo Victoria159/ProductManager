@@ -16,10 +16,6 @@ public class ProductManager {
 repo.save(product);
     }
 
-//    public Product[] findAll(){
-//        return repo.findAll();
-//    }
-
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
         for (Product product : repo.findAll()) {
