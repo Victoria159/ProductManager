@@ -27,17 +27,35 @@ public class Repository {
     }
 
     public void removeById(int id) {
-        int length = products.length - 1;
-        Product[] tmp = new Product[length];
+        if (findById(id) == null) {
+            throw new NotFoundException("Element with id: " + id + " not found");
+        }
+        Product[] tmp2 = new Product[products.length - 1];
         int index = 0;
         for (Product product : products) {
             if (product.getId() != id) {
-                tmp[index] = product;
+                tmp2[index] = product;
                 index++;
             }
         }
-        products = tmp;
+        products = tmp2;
+
     }
+
+
+
+//    public void removeById(int id) {
+//        int length = products.length - 1;
+//        Product[] tmp = new Product[length];
+//        int index = 0;
+//        for (Product product : products) {
+//            if (product.getId() != id) {
+//                tmp[index] = product;
+//                index++;
+//            }
+//        }
+//        products = tmp;
+//    }
 
 
 }

@@ -3,7 +3,6 @@ package ru.netology.manager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Book;
-import ru.netology.domain.Main;
 import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
 import ru.netology.repository.Repository;
@@ -22,7 +21,7 @@ class ProductManagerTest {
     Product smartphone2 = new Smartphone(6, "title6", 1500, "Russia");
     Product smartphone3 = new Smartphone(7, "title6", 1500, "USA");
     Product smartphone4 = new Smartphone(8, "title8", 1500, "China");
-    Product main10 = new Main(10, "ttttt", 1, "hi");
+
 
     @BeforeEach
     public void setUp() {
@@ -107,16 +106,6 @@ class ProductManagerTest {
         assertArrayEquals(expected, actual);
     }
 
-    @BeforeEach
-    public void setUp2() {
-        manager.add(main10);
-    }
 
-    @Test
-    void shouldSearchByIfSmartphonesWithManufacturerExist4() {
-        Product[] expected = new Product[]{};
-        Product[] actual = manager.searchBy("hit");
-        assertArrayEquals(expected, actual);
-    }
 
 }
